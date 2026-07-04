@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravi Sharma | DevOps & Cloud Infrastructure Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --container-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --border-color: #e2e8f0;
+            --tag-bg: #eff6ff;
+            --tag-text: #1d4ed8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--container-bg);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Header Style */
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info i {
+            margin-right: 6px;
+            color: var(--accent-color);
+        }
+
+        /* Section Global Style */
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 i {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        p.summary {
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .skills-category {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            align-items: center;
+        }
+
+        .skills-category strong {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        .job-card {
+            margin-bottom: 25px;
+        }
+
+        .job-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .company-name {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .job-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            background: var(--bg-color);
+            padding: 2px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .job-bullets {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        .job-bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        .job-bullets li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Two Column Layout for footer items */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .edu-item, .cert-item {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .edu-item strong, .cert-item strong {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 15px 10px; }
+            .resume-container { padding: 25px; }
+            .job-header { flex-direction: column; gap: 5px; }
+            .skills-category { grid-template-columns: 1fr; gap: 5px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    <header>
+        <h1>RAVI SHARMA</h1>
+        <div class="subtitle">Software Engineer | DevOps & Cloud Infrastructure</div>
+        <div class="contact-info">
+            <span><i class="fa-solid fa-envelope"></i><a href="mailto:ravikr731@gmail.com">ravikr731@gmail.com</a></span>
+            <span><i class="fa-solid fa-phone"></i>+91 9608920450</span>
+            <span><i class="fa-solid fa-location-dot"></i>Pune, India (Willing to relocate)</span>
+            <span><i class="fa-brands fa-linkedin"></i><a href="https://linkedin.com/in/ravi-sharma-740674117" target="_blank">LinkedIn</a></span>
+            <span><i class="fa-brands fa-github"></i><a href="https://github.com/rakrsh" target="_blank">GitHub</a></span>
+        </div>
+    </header>
+
+    <section id="summary">
+        <h2><i class="fa-solid fa-user"></i>Professional Summary</h2>
+        <p class="summary">
+            Software Engineer with over 8 years of professional experience, including 4+ years dedicated to DevOps, Cloud Infrastructure, and automation[cite: 4]. Proven track record in designing and optimizing enterprise-grade CI/CD pipelines, managing containerized infrastructure across multi-node environments, and implementing high-performance monitoring stacks[cite: 4]. Adept at bridging the gap between backend development and scalable cloud operations within global R&D environments[cite: 4].
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2><i class="fa-solid fa-gears"></i>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skills-category">
+                <strong>Cloud & Infrastructure:</strong>
+                <div class="tags">
+                    <span class="tag">AWS (Associate Architect)</span><span class="tag">GCP</span><span class="tag">Azure</span>
+                    <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Terraform (IaC)</span>
+                </div>
+            </div>
+            <div class="skills-category">
+                <strong>DevOps & Automation:</strong>
+                <div class="tags">
+                    <span class="tag">CI/CD Pipelines</span><span class="tag">GitHub Actions</span>
+                    <span class="tag">Automated Testing</span><span class="tag">Infrastructure Automation</span>
+                </div>
+            </div>
+            <div class="skills-category">
+                <strong>Observability:</strong>
+                <div class="tags">
+                    <span class="tag">Prometheus</span><span class="tag">Grafana</span>
+                    <span class="tag">System Health Trackers</span><span class="tag">Telemetry Pipelines</span>
+                </div>
+            </div>
+            <div class="skills-category">
+                <strong>Workflow Orchestration:</strong>
+                <div class="tags">
+                    <span class="tag">Apache Airflow</span><span class="tag">Task Scheduling</span><span class="tag">Data Pipelines</span>
+                </div>
+            </div>
+            <div class="skills-category">
+                <strong>Core Development:</strong>
+                <div class="tags">
+                    <span class="tag">Python (Advanced)</span><span class="tag">SQL</span><span class="tag">NoSQL</span><span class="tag">RESTful API Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2><i class="fa-solid fa-briefcase"></i>Professional Experience</h2>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Staff Engineer, R&D Engineering</span> | 
+                    <span class="company-name">Synopsys Inc.</span>
+                </div>
+                <span class="job-date">05/2026 – Present</span>
+            </div>
+            <ul class="job-bullets">
+                <li>Lead the design and integration of central, reusable technology components and workflows to standardize global software delivery[cite: 4].</li>
+                <li>Standardize, optimize, and scale enterprise-grade CI/CD pipelines to accelerate deployment lifecycles and improve engineering velocity[cite: 4].</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Senior Engineer, R&D Engineering</span> | 
+                    <span class="company-name">Synopsys Inc.</span>
+                </div>
+                <span class="job-date">07/2025 – 04/2026</span>
+            </div>
+            <ul class="job-bullets">
+                <li>Maintained and integrated containerized solutions across multi-node cluster environments, ensuring high availability and system resilience[cite: 4].</li>
+                <li>Developed shared components, automated pipelines, and comprehensive technical documentation to streamline system maintenance and scalability[cite: 4].</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">R&D Engineer II</span> | 
+                    <span class="company-name">Ansys Inc.</span>
+                </div>
+                <span class="job-date">01/2023 – 07/2025</span>
+            </div>
+            <ul class="job-bullets">
+                <li>Supported the deployment of web applications using container technologies for high-availability environments[cite: 4].</li>
+                <li>Developed backend services and APIs to facilitate data exchange between web interfaces and internal compute engines[cite: 4].</li>
+                <li>Collaborated with global stakeholders to refine technical specifications for engineering products[cite: 4].</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Software Engineer II</span> | 
+                    <span class="company-name">Ansys Inc.</span>
+                </div>
+                <span class="job-date">08/2021 – 12/2022</span>
+            </div>
+            <ul class="job-bullets">
+                <li>Developed full-stack web solutions utilizing Python APIs and internal frameworks to solve complex simulation and engineering challenges[cite: 4].</li>
+                <li>Integrated flagship engineering products into web-based platforms, significantly increasing software accessibility and utility[cite: 4].</li>
+                <li>Translated highly technical simulation workflows into functional, automated web-based developer tools[cite: 4].</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Senior Systems Engineer</span> | 
+                    <span class="company-name">Infosys Limited</span>
+                </div>
+                <span class="job-date">07/2020 – 08/2021</span>
+            </div>
+            <ul class="job-bullets">
+                <li>Built automated data migration pipelines and managed ML workflows using Airflow[cite: 4].</li>
+                <li>Monitored system health by setting up services with Prometheus and Grafana[cite: 4].</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Systems Engineer</span> | 
+                    <span class="company-name">Infosys Limited</span>
+                </div>
+                <span class="job-date">05/2018 – 07/2020</span>
+            </div>
+            <ul class="job-bullets">
+                <li>Developed and deployed containerized Python applications via Flask APIs on Google Cloud Platform[cite: 4].</li>
+                <li>Built specialized data processing modules for NLP and OCR automation tasks[cite: 4].</li>
+                <li>Contributed to the development of web-based features using Angular[cite: 4].</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="footer-grid">
+        <section id="education">
+            <h2><i class="fa-solid fa-graduation-cap"></i>Education</h2>
+            <div class="edu-item">
+                <strong>Silicon Institute of Technology, BBSR</strong><br>
+                Bachelor of Technology, Electrical & Electronics Engineering[cite: 4]
+            </div>
+        </section>
+
+        <section id="certs-languages">
+            <h2><i class="fa-solid fa-certificate"></i>Certifications & Langs</h2>
+            <div class="cert-item" style="margin-bottom: 10px;">
+                <strong>AWS Certified Solutions Architect – Associate</strong> (2021–2024)[cite: 4]
+            </div>
+            <div class="cert-item">
+                <strong>Languages:</strong> English (Full Professional), Hindi (Native)[cite: 4]
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
